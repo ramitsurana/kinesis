@@ -6,6 +6,13 @@ General Kinesis Information and Libraries
 | Library   |      Reference      |
 |----------|:-------------:|
 | Kinesis Producer Library |  https://github.com/awslabs/amazon-kinesis-producer |
-| Kinesis Connector Library | https://github.com/awslabs/amazon-redshift-utils/tree/master/src/AnalyzeVacuumUtility | 
-| RedShift Monitoring | https://github.com/awslabs/amazon-redshift-monitoring |
+| Kinesis Connector Library | - | 
 
+### Kinesis Connector Library Pipeline Workflow
+
+- [x] Kinesis Stream 
+- [x] iTransformer
+- [x] iFilter
+- [x] iBuffer
+- [x] iEmitter
+- [x] S3, Dynamodb, RedShift etc.
