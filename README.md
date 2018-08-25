@@ -47,9 +47,12 @@ It is composed of
 
 | Component Name   | Max Retry Time Period  |   Failed Folder Name |
 |------------------:|:-------------------------:|----------------------|
-| S3 | 24hrs | s3_failed | failed objects are stored in s3_failed folder |
-| RedShift | 0-120 min (0-7200 sec) | Skips S3 objects and creates a manifest file for manual backup  |
-| Elasticsearch | 0-120 min (0-7200 sec) | Skips index requests and stores in elasticsearch_failed folder|
+| S3 | 24hrs | s3_failed | failed objects are stored in (s3_failed folder) |
+| RedShift | 0-120 min (0-7200 sec) | Skips S3 objects and creates a manifest file in S3 for manual backup under (errors folder) |
+| Elasticsearch | 0-120 min (0-7200 sec) | Skips index requests and stores in (elasticsearch_failed folder)|
+
+* The PutRecordBatch() operation can take up to 500 records per call or 4 MB per call, whichever is smaller. 
+* Buffer size ranges from 1 MB to 128 MB.
 
 ## Lambda Blueprints for Kinesis Fireshose for Data Transformation
 
