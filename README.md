@@ -5,6 +5,7 @@
 * [AWS-IOT](#aws-iot)
 * [Elasticsearch](#elasticsearch)
 * [Kinesis](#kinesis)
+* [RStudio](#rstudio)
 
 ## Data Pipeline
 
@@ -102,3 +103,59 @@ It is composed of
 * Syslog to JSON
 * Syslog to CSV
 * General Firehose Processing
+
+## RStudio
+
+Can be integrated with -
+
+* RedShift
+* S3
+* EMR
+* RDS
+* Athena
+
+No Connectors. But can be implemented using drivers and packages on EC2 hosted RStudio.
+
+RStudio Installation - https://www.rstudio.com/products/rstudio/download/#download
+R Installation - https://cran.rstudio.com/
+
+Installation on EC2 Amazon Linux - 
+```
+-- install R
+sudo yum install -y R
+
+-- download and install RStudio-Server
+wget https://download2.rstudio.org/rstudio-server-rhel-1.0.153-x86_64.rpm
+sudo yum install -y --nogpgcheck rstudio-server-rhel-1.0.153-x86_64.rpm
+
+-- add user(s)
+sudo useradd rstudio
+
+-- install libcurl-devel package
+sudo yum install libcurl-devel.x86_64 -y
+```
+
+EC2 Login Page - https://<YOUR-EC2-DNS-NAME>:8787
+Login ID - rstudio (created above)
+Password - As Set above in the the shell script
+
+Run the below commands on RStudio console - 
+```
+-- install RCurl package in RStudio
+install.packages(â€œRCurl")
+
+-- load RCurl
+library("RCurl")
+
+-- Code to read an AWS public data set from S3 -
+data <- read.table(textConnection(getURL("https://cgiardata.s3-us-west-2.amazonaws.com/ccafs/amzn.csv")), sep=",", header=FALSE) 
+
+head(data)
+```
+
+References -
+
+* https://aws.amazon.com/blogs/big-data/connecting-r-with-amazon-redshift/
+* https://aws.amazon.com/blogs/big-data/statistical-analysis-with-open-source-r-and-rstudio-on-amazon-emr/
+* https://aws.amazon.com/blogs/big-data/running-r-on-aws/
+* https://aws.amazon.com/blogs/big-data/statistical-analysis-with-open-source-r-and-rstudio-on-amazon-emr/
