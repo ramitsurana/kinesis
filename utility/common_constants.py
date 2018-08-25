@@ -28,8 +28,10 @@ class Constants:
     FILE_IO_BASE_PATH = '/tmp/'
     FILE_EXTENSION_CSV = '.csv'
     FILE_EXTENSION_JSON = '.json'
-    RDS_AURORA_DEFAULT_PORT_NO = 3306
-    REDIS_CACHE_DEFAULT_PORT_NO = 6379
+    
+class IoTConstants:
+    """Set IOT SDK Constants"""
+    IOT_DEFAULT_PORT_NO = '8883'
 
 class BotoConstants:
     """Set boto constants."""
