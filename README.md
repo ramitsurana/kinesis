@@ -3,10 +3,11 @@ General Kinesis Information and Libraries
 
 ## General Information
 
-| Library   |      Reference      |
+| Component   |      Reference      |
 |----------|:-------------:|
 | Kinesis Producer Library |  https://github.com/awslabs/amazon-kinesis-producer |
 | Kinesis Connector Library | https://github.com/awslabs/amazon-kinesis-connectors | 
+| Kinesis Data Transformation | https://aws.amazon.com/blogs/compute/amazon-kinesis-firehose-data-transformation-with-aws-lambda/ |
 
 
 ## Shards
@@ -45,8 +46,8 @@ It is composed of
 ## Kinesis Firehose
 
 | Component Name   | Max Retry Time Period  |   Failed Folder Name |
-|------------------|:-------------------------:|----------------------|
-| S3 | 24hrs | s3_failed | s3_failed folder |
+|------------------:|:-------------------------:|----------------------|
+| S3 | 24hrs | s3_failed | failed objects are stored in s3_failed folder |
 | RedShift | 0-120 min (0-7200 sec) | Skips S3 objects and creates a manifest file for manual backup  |
 | Elasticsearch | 0-120 min (0-7200 sec) | Skips index requests and stores in elasticsearch_failed folder|
 
