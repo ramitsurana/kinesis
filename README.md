@@ -33,6 +33,28 @@
 
 Ref - https://d0.awsstatic.com/whitepapers/core-tenets-of-iot1.pdf
 
+### AWS IOT Rule Actions
+
+Used to specify what to do when a rule is triggered.
+
+* cloudwatchAlarm to change a CloudWatch alarm.
+* cloudwatchMetric to capture a CloudWatch metric.
+* dynamoDB to write data to a DynamoDB database.
+* dynamoDBv2 to write data to a DynamoDB database.
+* elasticsearch to write data to an Amazon Elasticsearch Service domain.
+* firehose to write data to an Amazon Kinesis Data Firehose stream.
+* iotAnalytics to send data to an AWS IoT Analytics channel.
+* kinesis to write data to a Kinesis stream.
+* lambda to invoke a Lambda function.
+* republish to republish the message on another MQTT topic.
+* s3 to write data to an Amazon S3 bucket.
+* salesforce to write a message to a Salesforce IoT input stream.
+* sns to write data as a push notification.
+* sqs to write data to an SQS queue.
+* stepFunctions to start execution of a Step Functions state machine.
+
+Ref - https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html
+
 ## Elasticsearch
 
 | Component   |      Reference      |
